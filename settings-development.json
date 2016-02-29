@@ -1,0 +1,10 @@
+{
+  "public": {
+    "key": "value"
+  },
+  "private": {
+    "MAIL_URL": ""
+    "ROOT_URL": "http://status.solarcity.com"
+    "APP_NAME": "StatusDot"
+  }
+}

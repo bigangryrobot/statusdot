@@ -1,0 +1,90 @@
+
+textarea.has-error, input.has-error {
+  border: 1px solid #A94442;
+}
+
+div.help-block {
+  margin-bottom: 10px;
+  color: #A94442;
+}
+
+.status-button {
+  margin: 2px;
+  line-height: 27px;
+  &.info {
+    background: #D9EDF7;
+    color: #31708F;
+  }
+  &.danger {
+    background: #F2DEDE;
+    color: #A94442;
+  }
+  &.success {
+    background: #DFF0D8;
+    color: #3C763D;
+  }
+  &.warning {
+    background: #FCF8E3;
+    color: #8A6D3B;
+  }
+}
+
+.status-button-container {
+   padding-bottom: 20px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+    -webkit-animation-name: btn-danger;
+    -webkit-animation-duration: 900ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;    
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+.text-white {
+    color:white !important;
+}
+.navbar-default {
+    background-color: #FFFFFF;
+}
+.main-container {
+    padding-top: 55px;
+}
+.text-danger {
+    color: #e51c23;
+}
+.text-warning {
+    color: #ff9800;
+}
+.text-success {
+    color: #4caf50;
+}
