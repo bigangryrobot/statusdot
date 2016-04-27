@@ -10,9 +10,30 @@ publicRoutes.route( '/invite/:token', {
 });
 
 publicRoutes.route( '/', {
-  name: 'incidentsPublic',
+  name: 'dashboardPublic',
   action() {
-    ReactLayout.render( App, { yield: <IncidentsPublic /> } );
+    ReactLayout.render( App, { yield: <DashboardPublic /> } );
+  }
+});
+
+publicRoutes.route( '/components', {
+  name: 'componentsList',
+  action() {
+    ReactLayout.render( App, { yield: <ComponentsList /> } );
+  }
+});
+
+publicRoutes.route( '/incidents', {
+  name: 'incidentsList',
+  action() {
+    ReactLayout.render( App, { yield: <IncidentsList /> } );
+  }
+});
+
+publicRoutes.route( '/components/:slug', {
+  name: 'singleComponent',
+  action( params ) {
+    ReactLayout.render( App, { yield: <SingleComponent slug={ params.slug } /> } );
   }
 });
 
@@ -24,9 +45,9 @@ publicRoutes.route( '/incidents/:slug', {
 });
 
 publicRoutes.route( '/tags/:tag', {
-  name: 'tagIndex',
+  name: 'tagList',
   action( params ) {
-    ReactLayout.render( App, { yield: <IncidentsPublic tag={ params.tag } /> } );
+    ReactLayout.render( App, { yield: <ComponentsList tag={ params.tag } /> } );
   }
 });
 

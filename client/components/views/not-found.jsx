@@ -1,7 +1,15 @@
 NotFound = React.createClass({
   render() {
-    return <DangerAlert>
+    return <GridRow>
+    <div className="container">
+      <GridColumn className="col-lg-12">
+      <br/>
+      <br/>
+    <DangerAlert>
       <strong>Error [404]</strong>: { FlowRouter.current().path } does not exist.
-    </DangerAlert>;
+    </DangerAlert>    
+      </GridColumn>
+      </div>
+    </GridRow>;
   }
 });

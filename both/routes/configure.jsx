@@ -6,5 +6,5 @@ FlowRouter.notFound = {
 };
 
 Accounts.onLogin( () => {
-  FlowRouter.go( 'incidentsPrivate' );
+  FlowRouter.go( 'componentsList' );
 });

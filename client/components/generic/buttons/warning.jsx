@@ -5,6 +5,7 @@ WarningButton = React.createClass({
       style="warning"
       label={ this.props.label }
       href={ this.props.href }
+      additionalclass={ this.props.additionalclass }
       onClick={ this.props.onClick }
     />;
   }

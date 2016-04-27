@@ -118,17 +118,20 @@ Users = React.createClass({
 
     return  <div className="users">
     <GridRow>
+
+    <div className="container">
       <GridColumn className="col-lg-12">
       <div className="page-header clearfix">
         <h4 className="pull-left">Invitations</h4>
         <button className="btn btn-default  pull-right" data-toggle="modal" data-target="#send-invitation-modal">Send Invitation</button>
       </div>
       { this.renderInviteTable( invitations ) }  
-      <div className="page-header clearfix">
+      <div className="clearfix">
       <h4 className="page-header">Users</h4>
       </div>
       { this.renderUserTable( users ) }
       </GridColumn>
+      </div>
     </GridRow>
     </div>;
   }

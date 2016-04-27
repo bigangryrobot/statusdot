@@ -4,6 +4,7 @@ LinkButton = React.createClass({
       type={ this.props.type }
       style="link"
       label={ this.props.label }
+      additionalclass={ this.props.additionalclass }
       href={ this.props.href }
       onClick={ this.props.onClick }
     />;

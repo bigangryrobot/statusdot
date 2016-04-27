@@ -1,6 +1,6 @@
 NavBarNav = React.createClass({
   renderDropdown( item, index ) {
-    let active = item.active ? 'dropdown active' : '';
+    let active = item.active ? 'dropdown open' : 'dropdown';
     return <li key={ `nav-item-${ item.uid }` } className={ active }>      
       <a href={ item.href } className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         { item.label } <span className="caret"></span>
@@ -24,3 +24,5 @@ NavBarNav = React.createClass({
     </ul>;
   }
 });
+
+

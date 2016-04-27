@@ -15,7 +15,6 @@ meteorhacks:npm
 
 themeteorchef:bert
 meteorhacks:ssr
-standard-minifiers
 
 
 npm-container
@@ -47,3 +46,8 @@ alanning:roles
 email
 twbs:bootstrap
 underscore
+standard-minifier-css
+standard-minifier-js
+d3js:d3
+lepozepo:publish-with-relations
+easy:search

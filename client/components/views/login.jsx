@@ -15,7 +15,7 @@ Login = React.createClass({
       messages: {
         emailAddress: {
           required: 'Need an email address here.',
-          email: 'Is this email address legit?'
+          email: 'Is this email address correct?'
         },
         password: {
           required: 'Need a password here.'
@@ -32,8 +32,7 @@ Login = React.createClass({
           if ( error ) {
             Bert.alert( error.reason, 'danger' );
           } else {
-            Bert.alert( 'Logged in!', 'success' );
-            
+            Bert.alert( 'Logged in!', 'success' );      
           }
         });
       }
@@ -44,6 +43,8 @@ Login = React.createClass({
   },
   render() {
     return <GridRow>
+    { this.props.hasUser ? <AuthenticatedBanner user={ this.data.user } /> : <PublicBanner /> } 
+    <div className="container">
       <GridColumn className="col-lg-12">
         <PageHeader size="h4" label="Log In" />
         <Form ref="loginForm" id="login" className="login" validations={ this.validations() } onSubmit={ this.handleSubmit }>
@@ -58,6 +59,7 @@ Login = React.createClass({
           </FormGroup>
         </Form>
       </GridColumn>
+      </div>
     </GridRow>;
   }
 });

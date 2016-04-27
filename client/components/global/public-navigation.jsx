@@ -3,6 +3,10 @@ PublicNavigation = React.createClass({
   getMeteorData() {
     return {
       items: {
+        left: [
+          { uid: 'incidents', href: '/incidents', label: 'Incidents' },
+          { uid: 'components', href: '/components', label: 'Components' }
+        ],        
         right: [
           { uid: 'login', href: '/login', label: 'Log In' }
         ]

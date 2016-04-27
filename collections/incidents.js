@@ -15,33 +15,32 @@ Incidents.deny({
 let IncidentsSchema = new SimpleSchema({
   "isActive": {
     type: Boolean,
-    label: "Is this incident published?",
+    label: "Is this incident active?",
     autoValue() {
       if ( this.isInsert ) {
         return false;
       }
     }
   },  
-  "isVisible": {
+  "isPublic": {
     type: Boolean,
-    label: "Is this incident published?",
+    label: "Is this incident publicly visible?",
     autoValue() {
       if ( this.isInsert ) {
         return false;
       }
     }
-  },
- 
-  "author": {
-    type: String,
-    label: "The ID of the author of this incident.",
-    autoValue() {
-      let user = Meteor.users.findOne( { _id: this.userId } );
-      if ( user ) {
-        return `${ user.profile.name.first } ${ user.profile.name.last }`;
-      }
-    }
-  },
+  }, 
+  // "author": {
+  //   type: String,
+  //   label: "The ID of the author of this incident.",
+  //   autoValue() {
+  //     let user = Meteor.users.findOne( { _id: this.userId } );
+  //     if ( user ) {
+  //       return `${ user.profile.name.first } ${ user.profile.name.last }`;
+  //     }
+  //   }
+  // },
   "updated": {
     type: String,
     label: "The date this incident was last updated on.",
@@ -60,12 +59,12 @@ let IncidentsSchema = new SimpleSchema({
     autoValue() {
       let slug              = this.value,
           existingSlugCount = Incidents.find( { _id: { $ne: this.docId }, slug: new RegExp( slug ) } ).count(),
-          existingUntitled  = Incidents.find( { slug: { $regex: /untitled-incident/i } } ).count();
+          existingUntitled  = Incidents.find( { slug: { $regex: /invalidslug-incident/i } } ).count();
 
       if ( slug ) {
         return existingSlugCount > 0 ? `${ slug }-${ existingSlugCount + 1 }` : slug;
       } else {
-        return existingUntitled > 0 ? `untitled-incident-${ existingUntitled + 1 }` : 'untitled-incident';
+        return existingUntitled > 0 ? `invalidslug-incident-${ existingUntitled + 1 }` : 'invalidslug-incident';
       }
     }
   },
@@ -74,9 +73,9 @@ let IncidentsSchema = new SimpleSchema({
     label: "The content of this incident.",
     optional: true
   },
-  "tags": {
+  "componentIds": {
     type: [ String ],
-    label: "The tags for this incident.",
+    label: "Array of componentIds",
     optional: true
   }
 });

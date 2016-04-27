@@ -6,9 +6,10 @@ App = React.createClass({
       hasUser: !!Meteor.user(),
       isPublic( route ) {
         return [
-          'incidentsPublic',
+          'dashboardPublic',
+          'componentsList',
+          'singleComponent',
           'singleIncident',
-          'tagsPublic',
           'login',
           'recoverPassword',
           'resetPassword',
@@ -25,8 +26,8 @@ App = React.createClass({
   },
   render() {
     return <div className=""><AppHeader hasUser={ this.data.hasUser } />
-    <div className="main-container container">
-      { this.data.loggingIn ? <Loading /> : this.getView() }
+    <div className="main-container">
+      { this.getView() }
     </div>
   </div>;
   }

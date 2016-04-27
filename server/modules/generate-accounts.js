@@ -25,7 +25,7 @@ let administrators = [
   }
 ];
 
-let generateAccounts = () => {
+let generateAccounts = () => {  
   let fakeUserCount = 5,
       usersExist    = _checkIfAccountsExist( administrators.length + fakeUserCount );
 
